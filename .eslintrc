@@ -1,0 +1,109 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "sort-keys-fix"
+  ],
+  "root": true,
+  "rules": {
+    "@typescript-eslint/no-inferrable-types": [ "off" ],
+    "@typescript-eslint/explicit-function-return-type": [ "error" ],
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "format": [
+          "camelCase"
+        ],
+        "selector": "default"
+      },
+      {
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "selector": "variable"
+      },
+      {
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "allow",
+        "selector": "parameter"
+      },
+      {
+        "format": [
+          "camelCase"
+        ],
+        "leadingUnderscore": "require",
+        "modifiers": [
+          "private"
+        ],
+        "selector": "memberLike"
+      },
+      {
+        "format": [
+          "PascalCase"
+        ],
+        "selector": "typeLike"
+      }
+    ],
+    "camelcase": "error",
+    "indent": [ "error", 2, { "SwitchCase": 1 } ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "comments": 80,
+        "tabWidth": 2
+      }
+    ],
+    "no-console": "off",
+    "no-param-reassign": "off",
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "quotes": [
+      "error",
+      "double"
+    ],
+    "radix": [
+      "error",
+      "as-needed"
+    ],
+    "semi": [
+      "error",
+      "always"
+    ],
+    "sort-keys": [
+      "error",
+      "asc",
+      {
+        "caseSensitive": true,
+        "minKeys": 2,
+        "natural": false
+      }
+    ]
+  }
+}
